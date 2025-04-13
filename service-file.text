@@ -1,5 +1,5 @@
 [Unit]
-Description=Gunicorn instance to serve Pathashala API
+Description=Gunicorn instance to serve Dev API
 After=network.target
 
 [Service]
