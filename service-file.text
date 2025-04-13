@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn instance to serve Pathashala API
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/<your_working_dir>
+ExecStart=/home/ubuntu/<your_working_dir>/venv/bin/gunicorn --workers 3 --bind unix:/home/ubuntu/<your_working_dir>/dev-api.sock dev_api.wsgi:application
+UMask=007
+
+[Install]
+WantedBy=multi-user.target

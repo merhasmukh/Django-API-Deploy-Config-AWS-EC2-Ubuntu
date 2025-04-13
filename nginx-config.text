@@ -1,0 +1,11 @@
+server {
+    server_name <your_ip> or <your_domain>;
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/home/ubuntu/<your_path>/dev-api.sock;
+    }
+
+  
+
+}
